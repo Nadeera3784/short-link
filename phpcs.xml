@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<ruleset name="Laravel Standards">
+    <description>PSR12 Coding Standards</description>
+    <!--PHP INI Settings -->
+    <ini name="memory_limit" value="128M"/>
+
+    <!--CONFIGURATION SECTION -->
+    <config name="ignore_errors_on_exit" value="0"/>
+    <config name="ignore_warnings_on_exit" value="1"/>
+
+    <!--ARGUMENTS SECTION -->
+    <arg name="basepath" value="."/>
+    <!--possible report formats source|full|summary|xml|csv|emacs|svnblame -->
+    <arg name="report" value="summary"/>
+    <!--filename to store the report -->
+    <!--arg name="report-file" value="{your-file-path}"/-->
+    <arg name="error-severity" value="1"/>
+    <arg name="warning-severity" value="1"/>
+    <arg name="colors"/>
+    <arg value="p"/>
+
+    <!--INCLUDED FILES/DIRECTORIES FOR SCAN -->
+    <file>app</file>
+    <file>config</file>
+
+    <!--EXCLUDED FILES/DIRECTORIES/PATTERN FROM SCAN -->
+    <exclude-pattern>*/*.js</exclude-pattern>
+    <exclude-pattern>*/*.css</exclude-pattern>
+    <exclude-pattern>*/*.xml</exclude-pattern>
+    <exclude-pattern>*/*.blade.php</exclude-pattern>
+    <exclude-pattern>*/autoload.php</exclude-pattern>
+    <exclude-pattern>*/cache/*</exclude-pattern>
+    <exclude-pattern>*/docs/*</exclude-pattern>
+    <exclude-pattern>*/lang/*</exclude-pattern>
+    <exclude-pattern>*/migrations/*</exclude-pattern>
+    <exclude-pattern>*/node_modules/*</exclude-pattern>
+    <exclude-pattern>*/resources/*</exclude-pattern>
+    <exclude-pattern>*/storage/*</exclude-pattern>
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+
+    <!-- CODING STANDARDS FOR SCAN -->
+    <rule ref="PSR12">
+        <exclude name="PSR12.Files.FileHeader.SpacingInsideBlock"/>
+    </rule>
+    <rule ref="Generic.PHP.ForbiddenFunctions">
+        <properties>
+            <property name="error" value="true" />
+            <property name="forbiddenFunctions" type="array">
+                <element key="eval" value="null"/>
+                <element key="dd" value="null"/>
+                <element key="die" value="null"/>
+                <element key="var_dump" value="null"/>
+                <element key="sizeof" value="count"/>
+                <element key="delete" value="unset"/>
+                <element key="print" value="echo"/>
+                <element key="create_function" value="null"/>
+            </property>
+        </properties>
+    </rule>
+    <rule ref="Generic.PHP.DeprecatedFunctions" />
+    <rule ref="Generic.CodeAnalysis.UnusedFunctionParameter"/>
+</ruleset>
