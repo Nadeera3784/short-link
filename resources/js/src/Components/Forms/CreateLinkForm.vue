@@ -1,7 +1,7 @@
 <template>
     <div class="space-y-6">
         <div class="space-y-1">
-            <label for="tk-pages-sign-in-email" class="font-medium">Generate short url for
+            <label for="link" class="font-medium">Generate short url for
                 free!</label>
             <input v-model="link"
                 class="block border border-gray-200 rounded px-5 py-3 leading-6 w-full focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50"
