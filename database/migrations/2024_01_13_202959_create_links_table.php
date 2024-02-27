@@ -16,6 +16,7 @@ return new class extends Migration
             $table->text('url');
             $table->string('identifier', 6);
             $table->timestamps();
+            $table->unique('url');
         });
     }
 
